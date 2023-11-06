@@ -128,7 +128,7 @@ public class PartieDames {
             damier.retirerPion(prise.getPositionPrise());
         }
 
-        damier.ajouterPion(listePrise.getLast().getPosition(), pion);
+        damier.ajouterPion(listePrise.get((listePrise.size() - 1)).getPosition(), pion);
     }
 
     /**
