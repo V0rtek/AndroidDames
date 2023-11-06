@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CheckStyle-IDEA" serialisationVersion="2">
-    <checkstyleVersion>10.12.4</checkstyleVersion>
-    <scanScope>AllSourcesWithTests</scanScope>
+    <checkstyleVersion>10.12.3</checkstyleVersion>
+    <scanScope>JavaOnlyWithTests</scanScope>
     <copyLibs>true</copyLibs>
     <option name="thirdPartyClasspath" />
     <option name="activeLocationIds">
-      <option value="a5b9c25d-52c8-4c69-b67c-aed3a1405e02" />
+      <option value="97d7af01-9823-41b0-8b02-5c11ab188604" />
     </option>
     <option name="locations">
       <list>
         <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
         <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
-        <ConfigurationLocation id="a5b9c25d-52c8-4c69-b67c-aed3a1405e02" type="HTTP_URL" scope="All" description="CstJean">
+        <ConfigurationLocation id="97d7af01-9823-41b0-8b02-5c11ab188604" type="HTTP_URL" scope="All" description="C">
           https://gtsthilaire.github.io/cstjean-checkstyle-checks/cstjean_checks.xml
           <option name="properties">
             <map>
