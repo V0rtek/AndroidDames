@@ -83,7 +83,7 @@ public class TestDamier {
                 "-p-p-p-p-p\n" +
                 "p-p-p-p-p-\n" +
                 "-p-p-p-p-p\n" +
-                "p-p-p-p-p-\n",
+                "p-p-p-p-p-",
                 RepresentationDamier.getRepresentation(damier));
     }
 
