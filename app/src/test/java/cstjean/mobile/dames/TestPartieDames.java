@@ -1,19 +1,28 @@
 package cstjean.mobile.dames;
 
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertFalse;
+import static junit.framework.TestCase.assertNotNull;
+import static junit.framework.TestCase.assertNull;
+import static junit.framework.TestCase.assertTrue;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import junit.framework.TestCase;
+
+import org.junit.Test;
 
 /**
  * Test pour la classe PartieDames.
  *
  * @author Zachary Deschênes-Tremblay, Justin Morand.
  */
-public class TestPartieDames extends TestCase {
+public class TestPartieDames {
     /**
      * Test la création d'une partie de dame et le changement de tour.
      */
+    @Test
     public void testCreer() {
         Damier damiers = new Damier();
         damiers.initialiser();
@@ -26,6 +35,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test l'historique de jeu.
      */
+    @Test
     public void testHistorique() {
         Damier damier = new Damier();
         PartieDames partie = new PartieDames(damier);
@@ -57,6 +67,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test la validité de la liste de déplacements donné par getDeplacementsPossible.
      */
+    @Test
     public void testGetDeplacementsPossible() {
         Damier damier = new Damier();
         PartieDames partie = new PartieDames(damier);
@@ -123,6 +134,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test la validité de la liste de déplacements donné par getDeplacementsPossibleDame.
      */
+    @Test
     public void testGetDeplacementsPossibleDame() {
         Damier damier = new Damier();
         final PartieDames partie = new PartieDames(damier);
@@ -149,6 +161,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test la fonction siPrisePossible.
      */
+    @Test
     public void testSiPrisePossible() {
         Damier damier = new Damier();
         Pion pionNoir = new Pion(Pion.Couleur.Noir);
@@ -193,6 +206,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test la fonction getPrisesPossibles et trouve ensuite les déplacements obligatoire pour un pion.
      */
+    @Test
     public void testGetPrisesPossibles() {
         Damier damier = new Damier();
         PartieDames partie = new PartieDames(damier);
@@ -246,6 +260,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test la fonction getPrisesPossibles et trouve ensuite les déplacements obligatoire pour une dame.
      */
+    @Test
     public void testGetPrisesPossiblesDames() {
         Damier damier = new Damier();
 
@@ -266,7 +281,7 @@ public class TestPartieDames extends TestCase {
         int[] suiteDesPrisesVoulus = new int[] {19};
         int[] suiteDesDeplacementVoulus = new int[] {23};
         int indexDeplacement = 0;
-        for (Prise d : listeMeilleursDeplacements.getFirst()) {
+        for (Prise d : listeMeilleursDeplacements.get(0)) {
             assertEquals(d.getPositionPrise(), suiteDesPrisesVoulus[indexDeplacement]);
             assertEquals(d.getPosition(), suiteDesDeplacementVoulus[indexDeplacement]);
             indexDeplacement++;
@@ -311,6 +326,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test les prises pour un pion.
      */
+    @Test
     public void testPrisePion() {
         Damier damier = new Damier();
         PartieDames partie = new PartieDames(damier);
@@ -333,7 +349,7 @@ public class TestPartieDames extends TestCase {
         Prise prisesN = partie.getPrisesPossibles(22);
         List<List<Prise>> listeMeilleursDeplacements = prisesN.trouverMeilleursSuiteDePrises();
 
-        partie.prise(22, listeMeilleursDeplacements.getFirst());
+        partie.prise(22, listeMeilleursDeplacements.get(0));
 
         assertNull(damier.inspecterCase(22));
         assertEquals(pionNoir, damier.inspecterCase(2));
@@ -350,6 +366,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test les prises pour une dame.
      */
+    @Test
     public void testPriseDame() {
         Damier damier = new Damier();
         PartieDames partie = new PartieDames(damier);
@@ -380,7 +397,7 @@ public class TestPartieDames extends TestCase {
         Prise prisesDameN = partie.getPrisesPossibles(19);
         List<List<Prise>> listeMeilleursDeplacements = prisesDameN.trouverMeilleursSuiteDePrises();
 
-        partie.prise(19, listeMeilleursDeplacements.getFirst());
+        partie.prise(19, listeMeilleursDeplacements.get(0));
 
         assertNull(damier.inspecterCase(28));
         assertNull(damier.inspecterCase(27));
@@ -396,6 +413,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test les déplacements de base pour un pion.
      */
+    @Test
     public void testDeplacerPion() {
         Damier damier = new Damier();
         damier.initialiser();
@@ -425,6 +443,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test les déplacements de base pour une dame.
      */
+    @Test
     public void testDeplacerDame() {
         Damier damier = new Damier();
         PartieDames partie = new PartieDames(damier);
@@ -455,6 +474,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test la transformation d'un pion en dame lorsqu'il arrive au bout du plateau.
      */
+    @Test
     public void testTransformation() {
         Damier damier = new Damier();
         PartieDames partie = new PartieDames(damier);
@@ -475,6 +495,7 @@ public class TestPartieDames extends TestCase {
     /**
      * Test la fin de partie.
      */
+    @Test
     public void testFinDePartie() {
         Damier damier = new Damier();
         PartieDames partie = new PartieDames(damier);

@@ -1,18 +1,37 @@
 package cstjean.mobile.dames;
 
-import java.util.ArrayList;
+import static junit.framework.TestCase.assertFalse;
+import static junit.framework.TestCase.assertNull;
+import static junit.framework.TestCase.assertTrue;
+
 import junit.framework.TestCase;
+
+import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.regex.PatternSyntaxException;
+
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.fail;
+
+import org.junit.Test;import org.junit.Before;
 
 /**
  * Test pour la classe Damier.
  *
  * @author Zachary Deschênes-Tremblay, Justin Morand.
  */
-public class TestDamier extends TestCase {
+public class TestDamier {
 
     /**
      * Tests l'ajout de pion dans un damier.
      */
+    @Test
     public void testAjouter() {
         Damier damier = new Damier();
         Pion pion1 = new Pion(Pion.Couleur.Noir);
@@ -34,6 +53,7 @@ public class TestDamier extends TestCase {
     /**
      * Test pour l'initialisation d'un damier de base.
      */
+    @Test
     public void testInitialiser() {
         final int nbDePionsDames = 40;
         final int nbDeCasesDames = 50;
@@ -69,6 +89,7 @@ public class TestDamier extends TestCase {
     /**
      * Test pour le get de toutes les positions de pion d'une couleur.
      */
+    @Test
     public void testGetToutesPosPion() {
         Damier damier = new Damier();
         Pion pion0 = new Pion(Pion.Couleur.Noir);

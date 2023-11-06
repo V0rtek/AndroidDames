@@ -5,11 +5,12 @@ import static org.junit.Assert.assertEquals;
 import java.util.List;
 import org.junit.Test;
 
+import org.junit.Test;
+
 /**
  * Test la classe Prise.
  */
 public class TestPrise {
-
     /**
      * Test la création d'une prise.
      */
@@ -22,7 +23,6 @@ public class TestPrise {
         assertEquals(1, prise.getPosition());
         assertEquals(7, prise.getPositionPrise());
     }
-
 
     /**
      * Fait des tests sur les enfants d'une prise.
