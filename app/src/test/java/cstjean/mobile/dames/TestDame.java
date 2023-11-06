@@ -1,22 +1,24 @@
 package cstjean.mobile.dames;
 
+import org.junit.Test;
+
 /**
  * Test la classe Dame bas sur les tests de TestPion.
  *
  * @author Zachary Deschênes-Tremblay, Justin Morand.
  */
-public class TestDame extends TestPion {
-    @Override
+public class TestDame {
+    @Test
     protected Pion creerPion() {
         return new Dame();
     }
 
-    @Override
+    @Test
     protected Pion creerPion(Pion.Couleur couleur) {
         return new Dame(couleur);
     }
 
-    @Override
+    @Test
     protected char getRepresentation(String couleur) {
         if ("Noir".equals(couleur)) {
             return 'D';

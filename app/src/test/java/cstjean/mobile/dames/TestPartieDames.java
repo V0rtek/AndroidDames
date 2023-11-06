@@ -1,6 +1,7 @@
 package cstjean.mobile.dames;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import junit.framework.TestCase;
 
@@ -213,7 +214,7 @@ public class TestPartieDames extends TestCase {
         int[] suiteDesPrisesVoulus = new int[] {22, 12};
         int[] suiteDesDeplacementsVoulus = new int[] {18, 7};
         int indexDeplacement = 0;
-        for (Prise d : listeMeilleursDeplacements.getFirst()) {
+        for (Prise d : listeMeilleursDeplacements.get(0)) {
             assertEquals(d.getPositionPrise(), suiteDesPrisesVoulus[indexDeplacement]);
             assertEquals(d.getPosition(), suiteDesDeplacementsVoulus[indexDeplacement]);
             indexDeplacement++;

@@ -41,11 +41,10 @@ public class TestDamier extends TestCase {
         Damier damier = new Damier();
         damier.initialiser();
         assertEquals(nbDePionsDames, damier.getNbDePions());
-        for (var i = 1; i <= nbDeCasesDames; i++) {
+        for (int i = 1; i <= nbDeCasesDames; i++) {
             if (i <= 20) {
                 assertEquals('P', damier.inspecterCase(i).getRepresentation());
             }
-
             if (i > 30) {
                 assertEquals('p', damier.inspecterCase(i).getRepresentation());
             }
@@ -53,17 +52,17 @@ public class TestDamier extends TestCase {
 
         System.out.println(damier);
 
-        assertEquals("""
-                -P-P-P-P-P
-                P-P-P-P-P-
-                -P-P-P-P-P
-                P-P-P-P-P-
-                ----------
-                ----------
-                -p-p-p-p-p
-                p-p-p-p-p-
-                -p-p-p-p-p
-                p-p-p-p-p-""",
+        assertEquals(
+                "-P-P-P-P-P\n" +
+                "P-P-P-P-P-\n" +
+                "-P-P-P-P-P\n" +
+                "P-P-P-P-P-\n" +
+                "----------\n" +
+                "----------\n" +
+                "-p-p-p-p-p\n" +
+                "p-p-p-p-p-\n" +
+                "-p-p-p-p-p\n" +
+                "p-p-p-p-p-\n",
                 RepresentationDamier.getRepresentation(damier));
     }
 
